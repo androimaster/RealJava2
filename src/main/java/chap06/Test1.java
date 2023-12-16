@@ -15,7 +15,7 @@ public class Test1 {
         }
 
         //배열을 출력한다.
-        for(int i = 0; i < data.length; i++) {
+        for(int i = data.length-1; i > -1; i--) {
             System.out.println(data[i]);
         }
     }

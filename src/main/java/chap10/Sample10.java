@@ -5,8 +5,8 @@ import lombok.Getter;
 
 public class Sample10 {
     public static void main(String[] args) {
-        Student<Integer, Integer> younghee = new Student<>(1, 4);
-        younghee.printInfo("영희");
+        Student<Integer, Integer> seohyun = new Student<>(5, 4);
+        seohyun.printInfo("서현");
     }
 }
 

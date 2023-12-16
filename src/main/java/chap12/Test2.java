@@ -22,7 +22,7 @@ public class Test2 {
 enum Season {
     SPRING("봄", "(Spring)"),
     SUMMER("여름", "(Summer)"),
-    FALL("가을", "(Fall)"),
+    AUTUMN("가을", "(Autumn)"),
     WINTER("겨울", "(Winter)");
 
     private final String han;

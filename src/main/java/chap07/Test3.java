@@ -1,7 +1,5 @@
 package chap07;
 
-import java.util.Arrays;
-
 public class Test3 {
     public static void main(String[] args) {
         //6개의 난수를 발생시킨다.
@@ -20,7 +18,6 @@ public class Test3 {
         }
 
         //추첨번호 출력
-        Arrays.sort(target);
-        System.out.println(Arrays.toString(target));
+        System.out.printf("%d %d %d %d %d %d", target[0], target[1], target[2], target[3], target[4], target[5]);
     }
 }

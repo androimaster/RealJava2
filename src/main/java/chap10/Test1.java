@@ -16,24 +16,5 @@ public class Test1 {
     }
 }
 
-class Person {
-    private String name;   //이름
-    private int age;       //나이
-    private float height;   //키
-    private float weight;  //몸무게
-    private String phone;  //연락처
-
-    @Builder
-    public Person(String name, int age, float height, float weight, String phone) {
-        this.name = name;
-        this.age = age;
-        this.height = height;
-        this.weight = weight;
-        this.phone = phone;
-    }
-
-    @Override
-    public String toString() {
-        return "Person [name=" + name + ", age=" + age + ", hight=" + height + ", weight=" + weight + ", phone=" + phone + "]";
-    }
-}
+@Builder
+record Person(String name, int age, float height, float weight, String phone) {}

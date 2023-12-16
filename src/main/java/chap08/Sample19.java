@@ -27,5 +27,5 @@ class Wallet {
 
     public void checkMyMoney() {
         System.out.println("남은 돈 : " + this.myMoney);
-    }	
+    }
 }

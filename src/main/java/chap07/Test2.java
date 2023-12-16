@@ -21,6 +21,6 @@ public class Test2 {
             String result = (you - com) == 0 ? "비김" : (you - com) == -1 ? "패" : "승";
             System.out.printf("결과 : %s\n", result);
             System.out.print("숫자를 입력하세요 : ");
-        }
+    	}
     }
 }

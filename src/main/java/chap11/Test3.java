@@ -1,19 +1,10 @@
 package chap11;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Test3 {
     public static void main(String[] args) {
-        var list = new ArrayList<Integer>();
-        list.add(1);
-        list.add(3);
-        list.add(8);
-        list.add(2);
-        list.add(9);
-        list.add(7);
-        list.add(6);
-        list.add(5);
-        list.add(4);
+        var list = Arrays.asList(1, 3, 8, 2, 9, 7, 6, 5, 4);
         System.out.println("시작 배열 : " + list);
 
         int startPos = 0;

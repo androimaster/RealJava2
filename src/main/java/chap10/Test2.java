@@ -4,20 +4,20 @@ import java.util.Arrays;
 
 public class Test2 {
     public static void main(String[] args) {
-        CustomList<String> CustomList = new CustomList<>();
-        CustomList.add("Iron man");
-        CustomList.add("Captain America");
-        CustomList.add("Thor");
-        System.out.println(CustomList.toString());
+        CubeBox<String> stringList = new CubeBox<>();
+        stringList.add("Iron man");
+        stringList.add("Captain America");
+        stringList.add("Thor");
+        System.out.println(stringList.toString());
 
-        CustomList<Integer> numberlist = new CustomList<>();
+        CubeBox<Integer> numberlist = new CubeBox<>();
         numberlist.add(1);
         numberlist.add(2);
         System.out.println(numberlist.toString());
     }
 }
 
-class CustomList<E> {
+class CubeBox<E> {
     private int listCount = 0;
 
     Object[] customList = new Object[0];
@@ -31,6 +31,6 @@ class CustomList<E> {
 
     @Override
     public String toString() {
-        return "CustomList =" + Arrays.toString(customList);
+        return "CubeBox = " + Arrays.toString(customList);
     }
 }

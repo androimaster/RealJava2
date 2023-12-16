@@ -4,21 +4,32 @@ import java.util.Arrays;
 
 public class Test3 {
     public static void main(String[] args) {
-        var wishList = new String[] {
-            "냉장고", "선풍기", "TV", "노트북", "세탁기", "에어컨"
-        };
+        int[][] box = new int[5][5];
 
-        var purchasedList = new String[] {
-            "에어컨", "노트북", "TV"
-        };
+        box[0][4] = 6;
 
-        System.out.println("== 구입하지 못한 물건 ==");
-        Arrays.sort(purchasedList);  //이진 검색을 위해서 정렬
+        box[1][3] = 5;
+        box[1][4] = 6;
 
-        System.out.printf("%s", Arrays.binarySearch(purchasedList, wishList[0]) < 0 ? wishList[0]+"\n" : "");
-        System.out.printf("%s", Arrays.binarySearch(purchasedList, wishList[1]) < 0 ? wishList[1]+"\n" : "");
-        System.out.printf("%s", Arrays.binarySearch(purchasedList, wishList[2]) < 0 ? wishList[2]+"\n" : "");
-        System.out.printf("%s", Arrays.binarySearch(purchasedList, wishList[3]) < 0 ? wishList[3]+"\n" : "");
-        System.out.printf("%s", Arrays.binarySearch(purchasedList, wishList[4]) < 0 ? wishList[4]+"\n" : "");
+        box[2][2] = 4;
+        box[2][3] = 5;
+        box[2][4] = 6;
+
+        box[3][1] = 3;
+        box[3][2] = 4;
+        box[3][3] = 5;
+        box[3][4] = 6;
+
+        box[4][0] = 2;
+        box[4][1] = 3;
+        box[4][2] = 4;
+        box[4][3] = 5;
+        box[4][4] = 6;
+
+        System.out.println(Arrays.toString(box[0]));
+        System.out.println(Arrays.toString(box[1]));
+        System.out.println(Arrays.toString(box[2]));
+        System.out.println(Arrays.toString(box[3]));
+        System.out.println(Arrays.toString(box[4]));
     }
 }

@@ -5,9 +5,9 @@ import lombok.Getter;
 
 public class Sample11 {
     public static void main(String[] args) {
-        Student1<Integer, Integer> younghee = new Student1<>(1, 4);
-        //Student1<Double, Double> younghee = new Student1<>(160.1 , 55.5); // 타입 제한으로 오류발생
-        younghee.printInfo("영희");
+        Student1<Integer, Integer> seohyun = new Student1<>(1, 4);
+        //Student1<Double, Double> seohyun = new Student1<>(160.1 , 55.5); // 타입 제한으로 오류발생
+        seohyun.printInfo("서현");
     }
 }
 
