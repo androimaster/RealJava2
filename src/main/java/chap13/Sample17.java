@@ -1,23 +1,46 @@
 package chap13;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+import java.time.Year;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 public class Sample17 {
     public static void main(String[] args) {
-        System.out.println("BASIC_ISO_DATE - "
-            + DateTimeFormatter.BASIC_ISO_DATE.format(LocalDate.of(2020, 5, 5)));
-        System.out.println("ISO_DATE - "
-            + DateTimeFormatter.ISO_DATE.format(LocalDate.of(2020, 5, 5)));
-        System.out.println("ISO_LOCAL_DATE - "
-            + DateTimeFormatter.ISO_LOCAL_DATE.format(LocalDate.of(2020, 5, 5)));
-        System.out.println("ISO_DATE_TIME - "
-            + DateTimeFormatter.ISO_DATE_TIME.format(LocalDateTime.of(2020, 5, 5, 10,5,12)));
-        System.out.println("ISO_LOCAL_DATE_TIME - "
-            + DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.of(2020, 5, 5, 10,5,12)));
-        System.out.println("ISO_TIME - "
-            + DateTimeFormatter.ISO_TIME.format(LocalTime.of(10,5,12)));
+        // 시스템 기본 시간
+        LocalDateTime ldt1 = LocalDateTime.now();
+        System.out.println("*. 시스템 기본 시간 : " + ldt1);
+        
+        ZoneId seoulZone   = ZoneId.of("Asia/Seoul");
+        ZoneId bangkokZone = ZoneId.of("Asia/Bangkok");
+        ZoneId sydneyZone  = ZoneId.of("Australia/Sydney");
+        
+        LocalDateTime ldt2 = LocalDateTime.now(seoulZone);
+        System.out.println("\n1. LocalDateTime 서울 : " + ldt2);
+        LocalDateTime ldt3 = LocalDateTime.now(bangkokZone);
+        System.out.println("2. LocalDateTime 방콕 : " + ldt3);
+        LocalDateTime ldt4 = LocalDateTime.now(sydneyZone);
+        System.out.println("3. LocalDateTime 시드니 : " + ldt4);
+        
+        ZonedDateTime zdt1 = ZonedDateTime.now(seoulZone);
+        System.out.println("\n1. ZonedDateTime 서울   : " + zdt1);
+        ZonedDateTime zdt2 = ZonedDateTime.now(bangkokZone);
+        System.out.println("2. ZonedDateTime 방콕  : " + zdt2);
+        ZonedDateTime zdt3 = ZonedDateTime.now(sydneyZone);
+        System.out.println("3. ZonedDateTime 시드니 : " + zdt3);
+        
+        ZonedDateTime nationalLiberationDay = 
+                Year.of(1945)
+                    .atMonth(8)
+                    .atDay(15)
+                    .atTime(10, 30)
+                    .atZone(ZoneId.of("Asia/Seoul"));
+        System.out.printf("\nnationalLiberationDay : %s\n"
+                , nationalLiberationDay);
+        
+        ZonedDateTime zdt4 = zdt1.plusHours(10)
+                                 .withZoneSameInstant(sydneyZone);
+        System.out.println("\n서울 출발 : " + zdt1 
+                                 + "\n10시간 후 호주에 도착 : " + zdt4); 
     }
 }

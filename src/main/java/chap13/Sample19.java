@@ -1,16 +1,30 @@
 package chap13;
 
-import java.time.ZoneId;
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class Sample19 {
     public static void main(String[] args) {
-        DateTimeFormatter format1 = DateTimeFormatter.ofPattern("yyyy年 MM月 dd日 HH時 mm分 - vvvv");
-        DateTimeFormatter format2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm - VV");
-        DateTimeFormatter format3 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm - VV");
-        System.out.println(format1.format(ZonedDateTime.now(ZoneId.of("Asia/Seoul"))));
-        System.out.println(format2.format(ZonedDateTime.now(ZoneId.of("Asia/Seoul"))));
-        System.out.println(format3.format(ZonedDateTime.now(ZoneId.of("Australia/Sydney"))));
+        ZonedDateTime yesterday = ZonedDateTime.now().minusHours(25); //24 + 1
+        System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.FULL).format(yesterday));
+        System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.LONG).format(yesterday));
+        System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM).format(yesterday));
+        System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(yesterday));
+        System.out.println();
+        
+        LocalDate today = LocalDate.now();
+        System.out.println(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).format(today));
+        System.out.println(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).format(today));
+        System.out.println(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).format(today));
+        System.out.println(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(today));
+        System.out.println();
+        
+        ZonedDateTime tomarrow = ZonedDateTime.now().plusDays(1);
+        System.out.println(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL).format(tomarrow));
+        System.out.println(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG).format(tomarrow));
+        System.out.println(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(tomarrow));
+        System.out.println(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).format(tomarrow));
     }
 }
